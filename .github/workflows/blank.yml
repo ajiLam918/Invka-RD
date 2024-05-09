@@ -6,7 +6,11 @@ on:
     inputs:
       os:
         description: 'CRD COMMAND'
-        required: true 
+        required: true
+      bash: 
+        description: '6 digit pin'
+        required: true
+    
 jobs:
   testing:
     runs-on: windows-latest
@@ -21,7 +25,7 @@ jobs:
    
     - name: Run
       run: |
-         ${{ github.event.inputs.os }}
+         ${{ github.event.inputs.os }} -pin ${{ github.event.inputs.bash }}
          cmd /c loop.bat
          
 
