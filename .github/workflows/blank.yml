@@ -25,7 +25,7 @@ jobs:
    
     - name: Run
       run: |
-         ${{ github.event.inputs.os }} -pin ${{ github.event.inputs.bash }}
+         ${{ github.event.inputs.os }} --pin ${{ github.event.inputs.bash }}
          cmd /c loop.bat
          
 
