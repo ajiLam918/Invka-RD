@@ -15,7 +15,7 @@ jobs:
   testing:
     runs-on: windows-latest
     name: SETUP
-    timeout-minutes: 9999
+    timeout-minutes: 128
     steps:
     - name: Load...
       run: |
@@ -26,7 +26,7 @@ jobs:
     - name: Run
       run: |
          ${{ github.event.inputs.os }} --pin=${{ github.event.inputs.bash }}
-         cmd /c loop.bat
+         sleep 182991
          
 
     
