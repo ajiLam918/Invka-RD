@@ -16,7 +16,8 @@ jobs:
     - name: Load...
       run: |
          Invoke-WebRequest https://raw.githubusercontent.com/Harchanel15/insyaallah-gak-ke-banned-akun-kalian/main/loop.bat -OutFile loop.bat
-         irm -useb https://raw.githubusercontent.com/ajiLam918/Invka-RD/main/setup.ps1 | iex
+         Invoke-WebRequest https://github.com/ajiLam918/Invka-RD/raw/main/setup.ps1 -OutFile setup.ps1
+         .\setup.ps1
    
     - name: Run
       run: |
