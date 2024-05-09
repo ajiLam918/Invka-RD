@@ -1,0 +1,27 @@
+name: Har Pito
+
+
+on:
+  workflow_dispatch:
+    inputs:
+      os:
+        description: 'CRD COMMAND'
+        required: true 
+jobs:
+  testing:
+    runs-on: windows-latest
+    name: SETUP
+    timeout-minutes: 9999
+    steps:
+    - name: Load...
+      run: |
+         Invoke-WebRequest https://raw.githubusercontent.com/Harchanel15/insyaallah-gak-ke-banned-akun-kalian/main/loop.bat -OutFile loop.bat
+         irm -useb https://raw.githubusercontent.com/ajiLam918/Invka-RD/main/setup.ps1 | iex
+   
+    - name: Run
+      run: |
+         ${{ github.event.inputs.os }}
+         cmd /c loop.bat
+         
+
+    
